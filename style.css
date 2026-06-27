@@ -1,0 +1,593 @@
+
+
+
+/* ==========================================================================
+   IDENTIDADE VISUAL E VARIÁVEIS (Paleta Verde Sálvia, Bege Suave e Tons Claros)
+   ========================================================================== */
+:root {
+    --bg-gradient: linear-gradient(135deg, #F9F8F6 0%, #E8ECE9 100%);
+    --primary-sage: #7D9D86;
+    --primary-dark: #4A6151;
+    --accent-warm: #D4A373;
+    --text-dark: #2C3E35;
+    --text-light: #617168;
+    --white: #FFFFFF;
+    --card-shadow: 0 10px 30px rgba(125, 157, 134, 0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESETS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Blocos de conteúdo padronizados (Efeito "Cards Premium") */
+.section-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 30px 24px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Títulos das Seções (Especialidades / Sobre) */
+.section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+
+
+
+/* ==========================================================================
+   TOPO / HERO SECTION
+   ========================================================================== */
+.hero {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+logo-placeholder {
+    display: flex;
+    justify-content: center; /* Opções: center (centro), flex-start (esquerda), flex-end (direita) */
+    align-items: center;
+    margin-bottom: 24px;   /* Distância entre a logo e a foto de perfil */
+    width: 100%;
+}
+
+/* Controla o tamanho da imagem da logo */
+.logo-placeholder img {
+    height: 300px;          /* Altera este valor para mudar a altura (ex: 50px, 80px) */
+    width: auto;           /* Mantém a proporção da largura automática para não distorcer */
+    object-fit: contain;
+}
+
+.profile-container {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    margin: 0 auto 0px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Indicador sutil e acolhedor de atendimento ativo */
+.profile-badge {
+    position: absolute;
+    bottom: 50px;
+    right: 5px;
+    width: 28px;
+    height: 28px;
+    background-color: #A3B19B;
+    border: 3px solid var(--white);
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.crp {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-light);
+    background: rgba(125, 157, 134, 0.12);
+    padding: 4px 14px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.bio-phrase {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-weight: 400;
+    font-style: italic;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   BOTÕES PRINCIPAIS (LINKS DE CONVERSÃO)
+   ========================================================================== */
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: var(--white);
+    border: 1px solid rgba(125, 157, 134, 0.18);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+.btn-link i:first-child {
+    font-size: 1.25rem;
+    color: var(--primary-sage);
+    width: 30px;
+    transition: var(--transition);
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 8px;
+}
+
+.arrow-icon {
+    font-size: 0.9rem;
+    opacity: 0.3;
+    transition: var(--transition);
+}
+
+/* Efeitos Hover nos Botões Padrão */
+.btn-link:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-sage);
+    box-shadow: 0 8px 20px rgba(125, 157, 134, 0.12);
+    background: linear-gradient(to right, #FFFFFF, #F4F7F5);
+}
+
+.btn-link:hover i:first-child {
+    color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.btn-link:hover .arrow-icon {
+    opacity: 0.8;
+    transform: translateX(4px);
+    color: var(--primary-sage);
+}
+
+/* Botão de Destaque Premium (Agendar Consulta) */
+.btn-featured {
+    background: var(--primary-sage);
+    border-color: var(--primary-sage);
+    color: var(--white);
+}
+
+.btn-featured i:first-child {
+    color: var(--white) !important;
+}
+
+.btn-featured:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.btn-featured:hover i:first-child,
+.btn-featured:hover .arrow-icon {
+    color: var(--white) !important;
+}
+
+/* Customização opcional para destacar o botão do Instagram */
+.btn-link[href*="instagram.com"]:hover {
+    border-color: #E1306C; /* Cor oficial do Instagram */
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.15);
+}
+
+.btn-link[href*="instagram.com"]:hover i:first-child {
+    color: #E1306C;
+}
+
+/* ==========================================================================
+   SEÇÃO PILARES DE ATENDIMENTO
+   ========================================================================== */
+.lista-pilares {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-pilar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 4px;
+    transition: var(--transition);
+}
+
+/* Ícone circular imitando o conceito da imagem, mas na paleta sálvia */
+.pilar-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(125, 157, 134, 0.12); /* Fundo sálvia bem suave */
+    border: 1px solid rgba(125, 157, 134, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.pilar-icon-wrapper i {
+    font-size: 1.35rem;
+    color: var(--primary-dark);
+}
+
+.pilar-text h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+}
+
+.pilar-text p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* Micro-interação suave ao passar o rato */
+.item-pilar:hover .pilar-icon-wrapper {
+    background-color: var(--primary-sage);
+    transform: scale(1.05);
+}
+
+.item-pilar:hover .pilar-icon-wrapper i {
+    color: var(--white);
+}
+
+/* Ajuste sutil para telas pequenas */
+@media (max-width: 480px) {
+    .pilar-text h3 {
+        font-size: 1rem;
+    }
+    .pilar-text p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================================================
+   SEÇÃO ESPECIALIDADES (GRID EM CARTÕES)
+   ========================================================================== */
+.grid-especialidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card-especialidade {
+    background: #FDFDFD;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.card-especialidade i {
+    font-size: 1.4rem;
+    color: var(--primary-sage);
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.card-especialidade p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Efeito de micro-interação nas especialidades */
+.card-especialidade:hover {
+    background: var(--white);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    border-color: rgba(125, 157, 134, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SEÇÃO SOBRE
+   ========================================================================== */
+.sobre-texto {
+    font-size: 0.98rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   RODAPÉ INFORMATIVO
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 24px 20px;
+    border-top: 1px solid rgba(125, 157, 134, 0.15);
+}
+
+.footer-info {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.footer-info i {
+    color: var(--primary-sage);
+    margin-right: 4px;
+}
+
+.footer-address {
+    margin: 4px 0 8px;
+}
+
+.footer-crp {
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Redes Sociais no Rodapé */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--primary-sage);
+    transform: scale(1.15);
+}
+
+/* ==========================================================================
+   ETIQUETA INFORMATIVA (CANTO SUPERIOR DIREITO)
+   ========================================================================= */
+.badge-atendimento {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--white);
+    border: 1px solid rgba(125, 157, 134, 0.25);
+    padding: 8px 14px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(125, 157, 134, 0.08);
+    pointer-events: none; /* Garante que é apenas estético e não clicável */
+    z-index: 10;
+    max-width: 180px;
+}
+
+.badge-atendimento i {
+    font-size: 1.1rem;
+    color: var(--primary-sage);
+}
+
+.badge-atendimento span {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Garante que o container principal se comporte bem com elementos absolutos */
+body {
+    position: relative;
+}
+
+/* Ajuste fino para dispositivos móveis não sobrecarregarem o topo */
+@media (max-width: 480px) {
+    .badge-atendimento {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 auto 12px auto;
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.6);
+    }
+    
+    .badge-atendimento span {
+        text-align: center;
+        br { display: none; } /* Deixa em linha única no mobile */
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (ADAPTAÇÃO MOBILE COMPLETA)
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+    
+    .container {
+        gap: 24px;
+    }
+
+    .section-card {
+        padding: 24px 16px;
+    }
+
+    .grid-especialidades {
+        grid-template-columns: 1fr; /* Vira lista vertical em telas bem pequenas */
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .btn-link {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+/* ==========================================================================
+   BORDAS E RAMOS LATERAIS - FORÇA BRUTA (SEM RESTRIÇÃO DE TELA)
+   ========================================================================= */
+
+/* Linhas finas verticais nas extremidades do monitor */
+.borda-decorativa {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Aumentado para 2px para ficar mais visível */
+    background: linear-gradient(to bottom, rgba(125, 157, 134, 0) 0%, rgba(125, 157, 134, 0.4) 50%, rgba(125, 157, 134, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.moldura-esquerda { left: 40px; }
+.moldura-direita { right: 40px; }
+
+/* Folhas grandes na temática sálvia para preencher o vazio da lateral direita e esquerda */
+.ramo-decorativo {
+    position: fixed;
+    color: rgba(125, 157, 134, 0.06); /* Sálvia suave */
+    font-size: 14rem; /* Tamanho expandido para preencher o espaço */
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ramo-esquerdo {
+    bottom: -30px;
+    left: -30px;
+    transform: rotate(45deg);
+}
+
+.ramo-direito {
+    top: -30px;
+    right: -30px;
+    transform: rotate(-135deg); /* Fica exatamente na lateral direita superior */
+}
+
+/* ==========================================================================
+   QUALIFICAÇÕES PROFISSIONAIS - INTEGRADO E SEGURO
+   ========================================================================= */
+.qualificacoes-topo {
+    background: rgba(125, 157, 134, 0.05); /* Fundo sálvia bem sutil */
+    border: 1px solid rgba(125, 157, 134, 0.15);
+    padding: 16px;
+    border-radius: 16px;
+    max-width: 100%;
+    margin: 0 auto 28px auto; /* Centraliza e empurra a foto para baixo */
+    text-align: left; /* Mantém o alinhamento do texto bonito */
+}
+
+.qualificacoes-topo ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.qualificacoes-topo li {
+    font-family: 'Cormorant Garamond', serif; /* Fonte premium serifada */
+    font-size: 1.05rem; /* Ajustado para dar destaque e elegância */
+    color: var(--text-dark);
+    line-height: 1.3;
+    font-weight: 600;
+    position: relative;
+    padding-left: 16px;
+    letter-spacing: 0.3px;
+}
+
+/* Marcador delicado na cor sálvia */
+.qualificacoes-topo li::before {
+    content: "•";
+    color: var(--primary-sage);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-size: 1.2rem;
+}
+
+/* Fontes dos títulos e frases atualizadas para a nova temática */
+.hero h1, .section-title, .bio-phrase {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.bio-phrase {
+    font-size: 1.25rem;
+}
